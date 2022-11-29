@@ -1,0 +1,476 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: url("/images/quiz-background.jpg") no-repeat center;
+  background-size: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  font-family: 'IM Fell DW Pica', serif;
+
+}
+
+.scoreboard-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  border: 0;
+  clip-path: polygon(
+    0% 15%,
+    15% 15%,
+    15% 0%,
+    85% 0%,
+    85% 15%,
+    100% 15%,
+    100% 85%,
+    85% 85%,
+    85% 100%,
+    15% 100%,
+    15% 85%,
+    0% 85%
+  );
+  width: 10rem;
+  background:url("/images/quiz-background.jpg");
+  text-transform: uppercase;
+  font-family: Peralta;
+  font-weight: 900;
+  cursor: pointer;
+  color: #fff;
+}
+.ml6 {
+  position: relative;
+  font-weight: 900;
+  font-size: 3rem;
+}
+.ml6 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+.ml6 .letter {
+  display: inline-block;
+  line-height: 2rem;
+  opacity: 0;
+}
+
+.container {
+  background:url("/images/quiz-box-background.jpg") no-repeat ;
+  background-size: cover;
+  position: relative;
+  margin: 2rem 0 0 0;
+  width: 80rem;
+  height: 90vh;
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  text-align: center;
+  border: 1px solid #000;
+  border-radius: 1rem;
+}
+input {
+  opacity: 0;
+  text-align: center;
+  padding: 1rem;
+  border: 1px solid #000;
+  border-radius: 1rem;
+}
+
+#input:focus {
+  outline: 0;
+}
+
+input[type="submit"] {
+  margin-top: 2.5rem;
+  border-radius: 4rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 1rem 1rem 0px rgba(0, 0, 0, 0.6);
+  background:url("/images/quiz-box-background.jpg");
+color:#fff;
+}
+#submit:active {
+  transform: translateX(0.1rem) !important;
+}
+
+
+.buttons-container {
+  width: 50rem;
+  max-height: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 0;
+}
+
+.welcome-header {
+  text-align: center;
+  font-size: 3rem;
+  font-family: "Peralta", cursive;
+  font-weight: 900;
+}
+
+.welcome-name {
+  color: #fff;
+}
+
+.info_box {
+  text-align: center;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+.info_box .info-title {
+  height: 60px;
+  width: 100%;
+  border-bottom: 1px solid lightgrey;
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+  border-radius: 5px 5px 0 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+.info_box .info-list {
+  padding: 15px 30px;
+}
+.info_box .info-list .info {
+  margin: 5px 0;
+  font-size:2rem;
+}
+.info_box .info-list .info span {
+  font-weight: 600;
+  color: #fff;
+}
+.info_box .buttons {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 30px;
+  border-top: 1px solid lightgrey;
+ 
+}
+.info_box .buttons button {
+  margin: 0 5px;
+  height: 40px;
+  width: 100px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #000;
+  background:url("/images/quiz-box-background.jpg");
+  color:#fff;
+}
+.btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 1rem 1rem 0px rgba(0, 0, 0, 0.6);
+}
+
+.btn:active {
+  transform: scale(1);
+  box-shadow: 0 1rem 1rem 0px rgba(0, 0, 0, 0.3);
+}
+
+.quiz-box {
+  background:url("/images/quiz-box-background.jpg") no-repeat ;
+  background-size: cover;
+  width: 80rem;
+  max-width: 100%;
+  display: none;
+  pointer-events: none;
+  position: relative;
+}
+header {
+  height: 8rem;
+  width: 100%;
+  padding: 0 3rem;
+  border-radius: 5px 5px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.title {
+  font-size: 3rem;
+  font-weight: 900;
+  color:  #fff;
+}
+.timer {
+  color: #004085;
+  background: #cce5ff;
+  border: 1px solid #b8daff;
+  height: 5rem;
+  padding: 0 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 16rem;
+  position: absolute;
+  right: 0;
+  top: 1rem;
+}
+.timer .time_left_txt {
+  font-weight: 400;
+  font-size: 2rem;
+}
+.timer .timer_sec {
+  font-size: 2rem;
+  font-weight: 900;
+  height: 3.5rem;
+  width: 4.5rem;
+  color: #fff;
+  border-radius: 0.5rem;
+  line-height: 3rem;
+  text-align: center;
+  background: #343a40;
+  border: 1px solid #343a40;
+  user-select: none;
+}
+.time_line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 0.5rem;
+  background: #007bff;
+}
+
+section {
+  padding: 2.5rem 3rem 2rem 3rem;
+  width: fit-content;
+  margin-top: 3rem;
+}
+.que_text {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #000;
+}
+
+section .option_list {
+  padding: 2rem 0;
+  display: block;
+}
+section .option_list .option {
+  background: aliceblue;
+  border: 1px solid #84c5fe;
+  border-radius: 0.5rem;
+  padding: 1rem 1.5rem;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+section .option_list .option:last-child {
+  margin-bottom: 0p;
+}
+section .option_list .option:hover {
+  color: #004085;
+  background: #cce5ff;
+  border: 1px solid #b8daff;
+}
+section .option_list .option.correct {
+  color: #155724;
+  background: #d4edda;
+  border: 1px solid #c3e6cb;
+}
+section .option_list .option.incorrect {
+  color: #721c24;
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+}
+section .option_list .option.disabled {
+  pointer-events: none;
+}
+section .option_list .option .icon {
+  height: 26px;
+  width: 26px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 13px;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  line-height: 24px;
+}
+.option_list .option .icon.tick {
+  color: #23903c;
+  border-color: #23903c;
+  background: #d4edda;
+}
+.option_list .option .icon.cross {
+  color: #a42834;
+  background: #f8d7da;
+  border-color: #a42834;
+}
+footer {
+  height: 3rem;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.next_btn {
+  height: 40px;
+  padding: 0 13px;
+  font-size: 18px;
+  font-weight: 400;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background:url("/images/quiz-box-background.jpg");
+  color:#fff;
+    line-height: 10px;
+  opacity: 1;
+  transform: scale(0.95);
+  transition: all 0.3s ease;
+}
+.next_btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 1rem 1rem 0px rgba(0, 0, 0, 0.6);
+
+}
+
+.next_btn:active {
+  background:url("/images/btn-crack.jpg");
+  transform: scale(1);
+  box-shadow: 0 1rem 1rem 0px rgba(0, 0, 0, 0.3);
+
+}
+
+.hidden {
+  pointer-events: none;
+}
+
+.time-off {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  display: none;
+}
+
+.time-off.show {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 3rem;
+}
+
+.time-off-btn {
+  padding: 1.5rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 3rem;
+  background: url("/images/btn-crack.jpg");
+  color:#fff;
+  font-weight: 900;
+  border: 1px solid #000;
+}
+
+#dashboard-container {
+  display: none;
+  position: relative;
+
+}
+
+#dashboard-container.show {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.list-title {
+  color: #fff;
+  text-align: center;
+  font-size: 3rem;
+  font-family: "Peralta", cursive;
+  font-weight: 900;
+}
+
+.quit-btn {
+  width: 40%;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #777;
+  cursor: pointer;
+  border: 1px solid #000;
+  font-weight: 900;
+  background: url("/images/btn-crack.jpg");
+  letter-spacing: 1rem;
+  position: fixed;
+  bottom: 4rem;
+
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 1rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.list-rank-el {
+  color: #fff;
+  font-weight: 900;
+}
+
+.list-name-el {
+  font-weight: bold;
+}
+
+.list-score-el {
+  color: #0053d9;
+  font-weight: bold;
+  font-size: 2rem;
+}

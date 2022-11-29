@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica&display=swap" rel="stylesheet">
+    <title>Trivia Quiz Game</title>
+  </head>
+  <body>
+    <div class="container">
+      <button class=" btn scoreboard-btn dashboard"> Score Board</button>
+
+      <h1 class="ml6">
+        <span class="text-wrapper">
+          <span class="letters">
+            Welcome to Trivia Quiz Game. <br> Please Enter Your Name
+            
+          </span>
+        </span>
+      </h1>
+
+      <input type="text" id="input" placeholder="Enter Your Name" />
+      <input type="submit" value="submit" id="submit" />
+
+      <!-- Quiz Box -->
+      <div class="quiz-box">
+        <header>
+          <div class="title">Trivia Quiz Application</div>
+          <div class="timer">
+            <div class="time_left_txt">Time Left</div>
+            <div class="timer_sec" id="counter"></div>
+          </div>
+          <div class="time_line"></div>
+        </header>
+        <section>
+          <div class="que_text"></div>
+          <div class="option_list"></div>
+        </section>
+        <footer>
+          <div class="total_que"></div>
+          <button class="next_btn">Skip</button>
+        </footer>
+      </div>
+      <!---- Dashboard table -->
+      <div id="dashboard-container">
+        <div class="player-result">
+          <h2 id="player-name"></h2>
+          <h3 id="player-score"></h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Time Off Element  -->
+    <div class="time-off">
+      <h2>Time Off</h2>
+      <h4>You Answer <span id="score"></span> Question(s)</h4>
+      <div class="buttons-container">
+        <button class="btn time-off-btn " id="restart-game">Restart Game</button>
+        <button class="btn time-off-btn dashboard">Show Dashboard</button>
+      </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.13.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.13.0/firebase-firestore-compat.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
